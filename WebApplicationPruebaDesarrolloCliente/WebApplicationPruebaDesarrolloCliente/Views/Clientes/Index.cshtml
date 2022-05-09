@@ -1,0 +1,75 @@
+﻿@model IEnumerable<WebApplicationPruebaDesarrolloCliente.Models.Clientes>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Crear Nuevo Tipo de Cliente</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdTipoCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroIdentidad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaRegistro)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaModificado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUsuario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdTipoCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroIdentidad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreCliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaRegistro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaModificado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUsuario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoCliente.IdTipoCliente)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido</h1>
+
+
+
+    @section Scripts {
+        @if(SesionUsuario.CodSesionUsuario != null){
+           <h1 class="display-4, text-center">@SesionUsuario.CodSesionUsuario</h1>
+        }
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</div>
